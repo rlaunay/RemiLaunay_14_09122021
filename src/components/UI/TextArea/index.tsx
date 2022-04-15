@@ -1,6 +1,6 @@
-import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
+import { FieldError, UseFormRegister } from 'react-hook-form';
 
-type TextAreaProps = {
+export type TextAreaProps = {
   id: string;
   label: string;
   name: string;
