@@ -10,6 +10,7 @@ import { useAddEmployees } from '../hooks/useEmployees';
 import { departments } from '../utils/departments';
 import { EmployeeData, employeeForm } from '../utils/employeeForm';
 import { states } from '../utils/states';
+import { DatePicker } from '@relaunay/date-picker';
 
 const CreateEmployee: React.FC = () => {
   const addEmployees = useAddEmployees();
@@ -28,6 +29,7 @@ const CreateEmployee: React.FC = () => {
       </Modal>
       <Title className="my-8">Create Employee</Title>
       <form className="w-full sm:w-3/5 lg:w-2/5 flex flex-col" onSubmit={handleSubmit(submitHandler)}>
+        <DatePicker bgColor="white" color="#22c55e" />
         <TextArea {...employeeForm.firstName} register={register} error={errors.firstName}  />
         <TextArea {...employeeForm.lastName} register={register} error={errors.lastName} />
         <TextArea {...employeeForm.dateOfBirth} register={register} error={errors.dateOfBirth} />

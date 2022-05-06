@@ -1,6 +1,6 @@
 import React from 'react';
 
-type ButtonProps = {
+export type ButtonProps = {
   type?: 'submit' | 'reset' | 'button';
   onClick?: (e: React.MouseEvent) => void;
   className?: string;
