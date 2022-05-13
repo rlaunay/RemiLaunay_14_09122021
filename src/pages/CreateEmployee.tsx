@@ -8,7 +8,7 @@ import TextArea from '../components/UI/TextArea';
 import Title from '../components/UI/Title';
 import { useAddEmployees } from '../hooks/useEmployees';
 import { departments } from '../utils/departments';
-import { EmployeeData, employeeForm } from '../utils/employeeForm';
+import { EmployeeData, employeeForm as form } from '../utils/employeeForm';
 import { states } from '../utils/states';
 import { DatePicker } from '@relaunay/date-picker';
 
@@ -29,21 +29,20 @@ const CreateEmployee: React.FC = () => {
       </Modal>
       <Title className="my-8">Create Employee</Title>
       <form className="w-full sm:w-3/5 lg:w-2/5 flex flex-col" onSubmit={handleSubmit(submitHandler)}>
-        <DatePicker bgColor="white" color="#22c55e" />
-        <TextArea {...employeeForm.firstName} register={register} error={errors.firstName}  />
-        <TextArea {...employeeForm.lastName} register={register} error={errors.lastName} />
-        <TextArea {...employeeForm.dateOfBirth} register={register} error={errors.dateOfBirth} />
-        <TextArea {...employeeForm.startDate} register={register} error={errors.startDate} />
+        <TextArea {...form.firstName.input} {...register('firstName', form.firstName.rules)} error={errors.firstName}  />
+        <TextArea {...form.lastName.input} {...register('lastName', form.lastName.rules)} error={errors.lastName}  />
+        <TextArea {...form.dateOfBirth.input} {...register('dateOfBirth', form.dateOfBirth.rules)} error={errors.dateOfBirth} />
+        <TextArea {...form.startDate.input} {...register('startDate', form.startDate.rules)} error={errors.startDate} />
         <FormGroup label="Address" >
-          <TextArea {...employeeForm.street} register={register} error={errors.department} />
-          <TextArea {...employeeForm.city} register={register} error={errors.city} />
-          <Select {...employeeForm.state} register={register} options={states.map(state => ({
+          <TextArea {...form.street.input} {...register('street', form.street.rules)} error={errors.department} />
+          <TextArea {...form.city.input} {...register('city', form.city.rules)} error={errors.city} />
+          <Select {...form.state} register={register} options={states.map(state => ({
             value: state.abbreviation,
             label: state.name
           }))} error={errors.state} />
-          <TextArea {...employeeForm.zipCode} register={register} error={errors.zipCode} />
+          <TextArea {...form.zipCode.input} {...register('zipCode', form.zipCode.rules)} error={errors.zipCode} />
         </FormGroup>
-        <Select {...employeeForm.department} register={register} options={departments.map(dep => ({
+        <Select {...form.department} register={register} options={departments.map(dep => ({
           value: dep,
           label: dep
         }))} error={errors.state} />

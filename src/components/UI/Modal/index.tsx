@@ -1,4 +1,4 @@
-import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 import ReactDOM from 'react-dom';
 import Backdrop from './Backdrop';
 

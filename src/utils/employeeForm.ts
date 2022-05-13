@@ -12,9 +12,10 @@ export type EmployeeData = {
 
 export const employeeForm = {
   firstName: {
-    id: 'firstName',
-    name: 'firstName',
-    label: 'First Name',
+    input: {
+      id: 'firstName',
+      label: 'First Name',
+    },
     rules: {
       required: {
         value: true,
@@ -23,9 +24,10 @@ export const employeeForm = {
     }
   },
   lastName: {
-    id: 'lastName',
-    name: 'lastName',
-    label: 'Last Name',
+    input: {
+      id: 'lastName',
+      label: 'Last Name',
+    },
     rules: {
       required: {
         value: true,
@@ -34,10 +36,11 @@ export const employeeForm = {
     }
   },
   dateOfBirth: {
-    id: 'dateOfBirth',
-    name: 'dateOfBirth',
-    label: 'Date of Birth',
-    type: 'date',
+    input: {
+      id: 'dateOfBirth',
+      label: 'Date of Birth',
+      type: 'date',
+    },
     rules: {
       required: {
         value: true,
@@ -46,10 +49,11 @@ export const employeeForm = {
     }
   },
   startDate: {
-    id: 'startDate',
-    name: 'startDate',
-    label: 'Start Date',
-    type: 'date',
+    input: {
+      id: 'startDate',
+      label: 'Start Date',
+      type: 'date',
+    },
     rules: {
       required: {
         value: true,
@@ -58,9 +62,10 @@ export const employeeForm = {
     }
   },
   street: {
-    id: 'street',
-    name: 'street',
-    label: 'Street',
+    input: {
+      id: 'street',
+      label: 'Street',
+    },
     rules: {
       required: {
         value: true,
@@ -69,9 +74,10 @@ export const employeeForm = {
     }
   },
   city: {
-    id: 'city',
-    name: 'city',
-    label: 'City',
+    input: {
+      id: 'city',
+      label: 'City',
+    },
     rules: {
       required: {
         value: true,
@@ -91,10 +97,11 @@ export const employeeForm = {
     }
   },
   zipCode: {
-    id: 'zipCode',
-    name: 'zipCode',
-    label: 'Zip Code',
-    type: 'number',
+    input: {
+      id: 'zipCode',
+      label: 'Zip Code',
+      type: 'number',
+    },
     rules: {
       required: {
         value: true,
