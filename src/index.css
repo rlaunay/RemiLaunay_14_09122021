@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: hsl(142, 71%, 45%);
+  --white: hsl(0, 50%, 100%);
+  --bg-white: hsl(240, 5%, 96%);
+  --grey: hsl(218, 11%, 69%);
+  --dark-grey: hsl(215, 24%, 39%);
+  --error: hsl(0, 65%, 50%);
+}
+
 body {
   font-family: Roboto, sans-serif;
 }
