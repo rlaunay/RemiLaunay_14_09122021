@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { MdArrowUpward } from 'react-icons/md';
 
@@ -48,10 +47,12 @@ const ThCol: React.FC<ThColProps> = ({ title, data, onSort, sortedCol }) => {
 
   return (
     <th className="text-left h-14 px-8 text-sm" >
-      <motion.div 
+      <div 
         className="flex justify-center items-center cursor-pointer"
-        onHoverStart={() => setHovered(true)}
-        onHoverEnd={() => setHovered(false)}
+        // onHoverStart={() => setHovered(true)}
+        // onHoverEnd={() => setHovered(false)}
+        onMouseEnter={() => console.log('oui')}
+        onMouseLeave={() => console.log('non')}
         onClick={clickHandler}
       >
         {title}
@@ -60,7 +61,7 @@ const ThCol: React.FC<ThColProps> = ({ title, data, onSort, sortedCol }) => {
         >
           <MdArrowUpward className={`${opacity} ${rotate}`} />
         </div>
-      </motion.div>
+      </div>
     </th>
   );
 };
