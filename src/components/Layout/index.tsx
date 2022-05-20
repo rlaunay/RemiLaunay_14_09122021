@@ -1,10 +1,12 @@
 import Header from './Header';
 
+import classes from './Layout.module.css';
+
 const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="flex flex-col items-center px-5 relative grow overflow-y-auto bg-zinc-100">
+      <main className={classes.main}>
         {children}
       </main>
     </>

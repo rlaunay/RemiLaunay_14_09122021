@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom';
 import Backdrop from './Backdrop';
 
+import classes from './Modal.module.css';
+
 export type ModalProps = {
   onClose: () => void;
   isOpen: boolean;
@@ -10,7 +12,7 @@ export const ModalLayout: React.FC<ModalProps> = ({ children, isOpen, onClose })
   return (
     isOpen ? <Backdrop onClose={onClose}>
       <div
-        className="bg-white p-3 rounded-lg"
+        className={classes.container}
         onClick={(e: any) => e.stopPropagation()}
       >
         {children}

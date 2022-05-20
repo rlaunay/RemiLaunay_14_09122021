@@ -1,0 +1,21 @@
+.form-group {
+  position: relative;
+  padding: 1.25rem/* 20px */;
+  margin-top: 1.25rem/* 20px */;
+
+  border-radius: 0.375rem/* 6px */;
+  border: 2px solid var(--grey);
+}
+
+.form-group .label {
+  position: absolute;
+  padding-left: 0.5rem/* 8px */;
+  padding-right: 0.5rem/* 8px */;
+  
+  background-color: var(--bg-white);
+
+  color: var(--grey);
+  
+  top: 0px;
+  transform: translateY(-1rem);
+}

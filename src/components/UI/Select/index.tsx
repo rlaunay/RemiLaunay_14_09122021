@@ -1,5 +1,7 @@
 import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
 
+import classes from './Select.module.css';
+
 type SelectProps = {
     id: string;
     label: string;
@@ -20,15 +22,12 @@ type SelectProps = {
 
 const Select: React.FC<SelectProps> = ({ id, label, register, name, options, rules }) => {
   return (
-    <div className="flex flex-col w-full" >
-      <label className="text-gray-400" htmlFor={id}>{label}</label>
+    <div className={classes.container} >
+      <label className={classes.label} htmlFor={id}>{label}</label>
       <select 
         id={id} 
         {...register(name, rules)}
-        className="rounded-md w-full border-2 p-2 border-gray-400 font-semibold 
-      text-gray-600 hover:border-gray-600 focus:border-green-500 
-        outline-none transition-all duration-300
-        my-2" 
+        className={classes.select}
       >
         {options.map(opt => {
           return <option key={opt.value} value={opt.value}>{opt.label}</option>;

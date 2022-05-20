@@ -1,10 +1,12 @@
 import { Fragment } from 'react';
-import IconLink from '../components/UI/IconLink';
-import DataTable from '../components/UI/DataTable';
-import Title from '../components/UI/Title';
-import { useStateEmployees } from '../hooks/useEmployees';
+import IconLink from '../../components/UI/IconLink';
+import DataTable from '../../components/UI/DataTable';
+import Title from '../../components/UI/Title';
+import { useStateEmployees } from '../../hooks/useEmployees';
 
-import { ReactComponent as Plus } from './../assets/plus-solid.svg';
+import { ReactComponent as Plus } from './../../assets/plus-solid.svg';
+
+import classes from './EmployeeList.module.css';
 
 const EmployeeList: React.FC = () => {
   const employees = useStateEmployees();
@@ -24,7 +26,7 @@ const EmployeeList: React.FC = () => {
       ]} />
       <IconLink
         to="/new-employee"
-        className="fixed bottom-5 right-5 sm:bottom-10 sm:right-10"
+        className={classes.linkBtn}
       >
         <Plus />
       </IconLink>

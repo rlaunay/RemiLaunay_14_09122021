@@ -51,8 +51,8 @@ const ThCol: React.FC<ThColProps> = ({ title, data, onSort, sortedCol }) => {
         className="flex justify-center items-center cursor-pointer"
         // onHoverStart={() => setHovered(true)}
         // onHoverEnd={() => setHovered(false)}
-        onMouseEnter={() => console.log('oui')}
-        onMouseLeave={() => console.log('non')}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         onClick={clickHandler}
       >
         {title}

@@ -18,6 +18,7 @@ module.exports = {
         },
       },
     },
+    'storybook-css-modules-preset'
   ],
   "framework": "@storybook/react"
 }

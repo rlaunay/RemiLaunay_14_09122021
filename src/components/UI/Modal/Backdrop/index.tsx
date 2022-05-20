@@ -1,10 +1,12 @@
+import classes from './Backdrop.module.css';
+
 type BackdropProps = {
   onClose: () => void;
 }
 
 const Backdrop: React.FC<BackdropProps> = ({ children, onClose }) => (
   <div
-    className="fixed inset-0 bg-black/30 flex justify-center items-center z-40"
+    className={classes.backdrop}
     onClick={onClose}
     role="none"
   >

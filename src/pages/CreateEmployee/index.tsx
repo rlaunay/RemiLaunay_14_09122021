@@ -1,16 +1,18 @@
 import { Fragment } from 'react';
 import { useForm } from 'react-hook-form';
-import Button from '../components/UI/Button';
-import FormGroup from '../components/UI/FormGroup';
-import Modal from '../components/UI/Modal';
-import Select from '../components/UI/Select';
-import TextArea from '../components/UI/TextArea';
-import Title from '../components/UI/Title';
-import { useAddEmployees } from '../hooks/useEmployees';
-import { departments } from '../utils/departments';
-import { EmployeeData, employeeForm as form } from '../utils/employeeForm';
-import { states } from '../utils/states';
+import Button from '../../components/UI/Button';
+import FormGroup from '../../components/UI/FormGroup';
+import Modal from '../../components/UI/Modal';
+import Select from '../../components/UI/Select';
+import TextArea from '../../components/UI/TextArea';
+import Title from '../../components/UI/Title';
+import { useAddEmployees } from '../../hooks/useEmployees';
+import { departments } from '../../utils/departments';
+import { EmployeeData, employeeForm as form } from '../../utils/employeeForm';
+import { states } from '../../utils/states';
 import { DatePicker } from '@relaunay/date-picker';
+
+import classes from './CreateEmployee.module.css';
 
 const CreateEmployee: React.FC = () => {
   const addEmployees = useAddEmployees();
@@ -27,8 +29,8 @@ const CreateEmployee: React.FC = () => {
       <Modal isOpen={isSubmitSuccessful} onClose={() => reset()} >
         Employee Created!
       </Modal>
-      <Title className="my-8">Create Employee</Title>
-      <form className="w-full sm:w-3/5 lg:w-2/5 flex flex-col" onSubmit={handleSubmit(submitHandler)}>
+      <Title className={classes.title}>Create Employee</Title>
+      <form className={classes.form} onSubmit={handleSubmit(submitHandler)}>
         <TextArea {...form.firstName.input} {...register('firstName', form.firstName.rules)} error={errors.firstName}  />
         <TextArea {...form.lastName.input} {...register('lastName', form.lastName.rules)} error={errors.lastName}  />
         <TextArea {...form.dateOfBirth.input} {...register('dateOfBirth', form.dateOfBirth.rules)} error={errors.dateOfBirth} />
@@ -46,7 +48,7 @@ const CreateEmployee: React.FC = () => {
           value: dep,
           label: dep
         }))} error={errors.state} />
-        <Button className="my-5 ml-auto" type="submit">Save</Button>
+        <Button className={classes.btn} type="submit">Save</Button>
       </form>
     </Fragment>
   );

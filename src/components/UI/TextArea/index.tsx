@@ -1,6 +1,8 @@
 import { ChangeEventHandler, FocusEventHandler, forwardRef } from 'react';
 import { FieldError } from 'react-hook-form';
 
+import classes from './TextArea.module.css';
+
 export type TextAreaProps = {
   id: string;
   label: string;
@@ -14,9 +16,9 @@ export type TextAreaProps = {
 const TextArea = forwardRef<HTMLInputElement, TextAreaProps>(({ id, label, onChange, onBlur, name, type = 'text', error }, ref) => {
   return (
     <div
-      className="flex flex-col w-full"
+      className={classes.container}
     >
-      <label htmlFor={id} className="text-gray-400">{label}</label>
+      <label htmlFor={id} className={classes.label}>{label}</label>
       <input
         id={id} 
         type={type}
@@ -24,13 +26,10 @@ const TextArea = forwardRef<HTMLInputElement, TextAreaProps>(({ id, label, onCha
         placeholder={label}
         onChange={onChange}
         onBlur={onBlur}
-        className={`rounded-md w-full border-2 p-2 border-gray-400 font-semibold 
-        text-gray-600 hover:border-gray-600 focus:border-green-500 
-        focus:text-green-600 outline-none transition-all duration-300
-        my-2 ${error ? 'border-red-600 focus:border-red-600 focus:text-red-600' : ''}`}
+        className={`${classes.input} ${error ? classes.error : ''}`}
         ref={ref}
       />
-      {error && <p className="text-red-600" >{error.message}</p>}
+      {error && <p className={classes.error} >{error.message}</p>}
     </div>
   );
 });

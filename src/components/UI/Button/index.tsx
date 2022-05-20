@@ -1,5 +1,7 @@
 import React from 'react';
 
+import classes from './Button.module.css';
+
 export type ButtonProps = {
   type?: 'submit' | 'reset' | 'button';
   onClick?: (e: React.MouseEvent) => void;
@@ -8,7 +10,7 @@ export type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = ({ children, onClick, type = 'button', className = '' }) => {
   return (
-    <button className={`bg-green-500 px-5 py-1 rounded-lg text-white text-xl ${className}`} onClick={onClick} type={type} >
+    <button className={`${classes.button} ${className}`} onClick={onClick} type={type} >
       {children}
     </button>
   );
