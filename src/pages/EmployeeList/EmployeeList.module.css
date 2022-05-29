@@ -1,0 +1,12 @@
+.linkBtn {
+  position: fixed;
+  bottom: 1.25rem/* 20px */;
+  right: 1.25rem/* 20px */;
+}
+
+@media (min-width: 640px) {
+  .linkBtn {
+    bottom: 2.5rem/* 40px */;
+    right: 2.5rem/* 40px */;
+  }
+}
