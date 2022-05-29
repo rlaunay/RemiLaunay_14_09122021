@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+import Fade from '../Fade';
 import Backdrop from './Backdrop';
 
 import classes from './Modal.module.css';
@@ -10,14 +11,19 @@ export type ModalProps = {
 
 export const ModalLayout: React.FC<ModalProps> = ({ children, isOpen, onClose }) => {
   return (
-    isOpen ? <Backdrop onClose={onClose}>
-      <div
-        className={classes.container}
-        onClick={(e: any) => e.stopPropagation()}
-      >
-        {children}
-      </div>
-    </Backdrop> : null
+    <Fade visible={isOpen} >
+      <Backdrop onClose={onClose}>
+        <div
+          className={classes.container}
+          onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => e.stopPropagation()}
+        >
+          <span className={classes.close} onClick={onClose} >
+            &times;
+          </span>
+          {children}
+        </div>
+      </Backdrop>
+    </Fade>
   );
 };
 

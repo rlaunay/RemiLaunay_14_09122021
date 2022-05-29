@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { MdArrowUpward } from 'react-icons/md';
 
+import classes from './Thead.module.css';
+
 type ThColProps = {
   title: string;
   data: string;
@@ -31,33 +33,25 @@ const ThCol: React.FC<ThColProps> = ({ title, data, onSort, sortedCol }) => {
     });
   };
 
-  // useEffect(() => {
-  //   console.log(sortedCol);
-  //   if (sortedCol?.col === data) return;
-  //   setSorted(Sorted.none);
-  // }, [sortedCol?.col]);
-
   useEffect(() => {
     onSort({ col: data, type: sorted });
   }, [sorted]);
 
 
-  const opacity = sorted === Sorted.none ? 'opacity-50' : 'opacity-100';
-  const rotate = sorted === Sorted.desc && 'rotate-180';
+  const opacity = sorted === Sorted.none ? classes['opacity-50'] : classes['opacity-100'];
+  const rotate = sorted === Sorted.desc && classes.rotate;
 
   return (
-    <th className="text-left h-14 px-8 text-sm" >
+    <th className={classes.th} >
       <div 
-        className="flex justify-center items-center cursor-pointer"
-        // onHoverStart={() => setHovered(true)}
-        // onHoverEnd={() => setHovered(false)}
+        className={classes['title-container']}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={clickHandler}
       >
         {title}
         <div
-          className={`ml-1 ${hovered || ((sortedCol?.type !== Sorted.none) &&  sortedCol?.col === data) ? 'opacity-100' : 'opacity-0'}`}
+          className={`${classes.arrow} ${hovered || ((sortedCol?.type !== Sorted.none) &&  sortedCol?.col === data) ? classes['opacity-100'] : classes['opacity-0']}`}
         >
           <MdArrowUpward className={`${opacity} ${rotate}`} />
         </div>

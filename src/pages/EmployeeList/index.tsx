@@ -1,15 +1,15 @@
 import { Fragment } from 'react';
 import IconLink from '../../components/UI/IconLink';
-import DataTable from '../../components/UI/DataTable';
+import DataTable from '../../components/DataTable';
 import Title from '../../components/UI/Title';
-import { useStateEmployees } from '../../hooks/useEmployees';
 
 import { ReactComponent as Plus } from './../../assets/plus-solid.svg';
 
 import classes from './EmployeeList.module.css';
+import { useEmployeesValue } from '../../store/employees';
 
 const EmployeeList: React.FC = () => {
-  const employees = useStateEmployees();
+  const employees = useEmployeesValue();
   return (
     <Fragment>
       <Title>Employees List</Title>

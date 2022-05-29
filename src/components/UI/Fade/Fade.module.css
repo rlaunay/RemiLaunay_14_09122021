@@ -1,0 +1,7 @@
+.fade {
+  transition: opacity .3s;
+}
+
+.fade.out {
+  opacity: 0;
+}

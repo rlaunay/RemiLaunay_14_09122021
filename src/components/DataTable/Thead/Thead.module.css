@@ -1,0 +1,39 @@
+.tr {
+  border-bottom: 1px solid var(--grey);
+}
+
+.th {
+  text-align: left;
+  height: 3.5rem/* 56px */;
+  padding-left: 2rem/* 32px */;
+  padding-right: 2rem/* 32px */;
+  font-size: 0.875rem/* 14px */;
+  line-height: 1.25rem/* 20px */;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow {
+  margin-left: 0.25rem/* 4px */;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-50 {
+  opacity: .5;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}

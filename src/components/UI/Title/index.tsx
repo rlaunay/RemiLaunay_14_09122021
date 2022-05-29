@@ -1,6 +1,6 @@
 import classes from './Title.module.css';
 
-type TitleProps = {
+export type TitleProps = {
   className?: string;
 }
 

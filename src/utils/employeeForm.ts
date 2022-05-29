@@ -38,8 +38,7 @@ export const employeeForm = {
   dateOfBirth: {
     input: {
       id: 'dateOfBirth',
-      label: 'Date of Birth',
-      type: 'date',
+      label: 'Date of Birth'
     },
     rules: {
       required: {
@@ -51,8 +50,7 @@ export const employeeForm = {
   startDate: {
     input: {
       id: 'startDate',
-      label: 'Start Date',
-      type: 'date',
+      label: 'Start Date'
     },
     rules: {
       required: {

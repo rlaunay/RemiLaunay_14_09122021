@@ -6,16 +6,16 @@ import Modal from '../../components/UI/Modal';
 import Select from '../../components/UI/Select';
 import TextArea from '../../components/UI/TextArea';
 import Title from '../../components/UI/Title';
-import { useAddEmployees } from '../../hooks/useEmployees';
 import { departments } from '../../utils/departments';
 import { EmployeeData, employeeForm as form } from '../../utils/employeeForm';
 import { states } from '../../utils/states';
-import { DatePicker } from '@relaunay/date-picker';
 
 import classes from './CreateEmployee.module.css';
+import DatePickerArea from '../../components/UI/DatePickerArea';
+import { useAddEmployee } from '../../store/employees';
 
 const CreateEmployee: React.FC = () => {
-  const addEmployees = useAddEmployees();
+  const addEmployees = useAddEmployee();
   const { register, handleSubmit, formState: { errors, isSubmitSuccessful }, reset } = useForm<EmployeeData>();
 
   const submitHandler = (data: EmployeeData) => {
@@ -29,12 +29,12 @@ const CreateEmployee: React.FC = () => {
       <Modal isOpen={isSubmitSuccessful} onClose={() => reset()} >
         Employee Created!
       </Modal>
-      <Title className={classes.title}>Create Employee</Title>
+      <Title>Create Employee</Title>
       <form className={classes.form} onSubmit={handleSubmit(submitHandler)}>
         <TextArea {...form.firstName.input} {...register('firstName', form.firstName.rules)} error={errors.firstName}  />
         <TextArea {...form.lastName.input} {...register('lastName', form.lastName.rules)} error={errors.lastName}  />
-        <TextArea {...form.dateOfBirth.input} {...register('dateOfBirth', form.dateOfBirth.rules)} error={errors.dateOfBirth} />
-        <TextArea {...form.startDate.input} {...register('startDate', form.startDate.rules)} error={errors.startDate} />
+        <DatePickerArea {...form.dateOfBirth.input} {...register('dateOfBirth', form.dateOfBirth.rules)} error={errors.dateOfBirth} />
+        <DatePickerArea {...form.startDate.input} {...register('startDate', form.startDate.rules)} error={errors.startDate} />
         <FormGroup label="Address" >
           <TextArea {...form.street.input} {...register('street', form.street.rules)} error={errors.department} />
           <TextArea {...form.city.input} {...register('city', form.city.rules)} error={errors.city} />
